@@ -1,0 +1,36 @@
+1: Clone dự án về máy(local)
+	- git clone link repos
+	-VD: git clone https://github.com/khoatranpc/HocGit.git
+2: Thêm các hành động thay đổi vào nhánh hiện tại đang làm việc
+	- git add . (dấu chấm là thêm tất cả)
+3: Đặt tên các hành động đã thêm
+	- git commit -m"tên muốn đặt"
+	-VD: git commit -m"Update feat Login"
+4: Đẩy các hành động thay đổi, cập nhật lên git repos(remote)
+	-git push origin tên nhánh muốn đẩy
+	-VD: git push origin main
+	-Với: origin là remote hiện tại của git local; 
+		ví dụ: https://github.com/khoatranpc/HocGit.git
+5: Chuyển đổi nhánh làm việc
+	- git checkout -b tên nhánh (Nếu không tồn tại nhánh đó thì sẽ tự động add thêm)
+	-Lưu ý: khi chuyển nhánh, git sẽ tự động kéo code từ remote về local
+		- ví dụ: ở nhánh main(default) có file code1.txt, code2.txt
+			 ở nhánh singin có file code1.txt
+			 nếu ở git local hiện tại đang ở main, thì trong folder
+			 sẽ tồn tại 2 file code1 và code2
+			 nhưng khi dùng lệnh checkout sang nhánh signin thì sẽ chỉ còn file code1.txt
+			 và nếu checkout lại sang nhánh main thì sẽ lại có 2 file code1 và code2
+6: Hợp nhánh
+ Trước khi hợp, sẽ cần thêm các hành động thay đổi vào nhánh hiện tại đang làm việc, đặt tên cho hành động
+	*Đối với local
+		B1: Checkout nhánh mình muốn gộp code từ các nhánh khác về
+			Ví dự: ta muốn gộp nhánh signin về nhánh main
+				ta sẽ checkout về nhánh main, dùng lệnh git checkout -b main hoăc git checkout main
+		B2: Sau khi checkout xong
+			Thực hiện gộp nhánh signin về nhánh main: git merge signin
+		B3: Sau khi merge ở local xong -> thực hiện các bước để có thể đẩy lên repos
+	*Đối với repos trên web github(youtube)
+			
+
+
+	
