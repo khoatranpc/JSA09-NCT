@@ -52,7 +52,6 @@ let readData = (listToDo) => {
     arrBtnRemoveItem = [...removeItemBtn];
     arrBtnRemoveItem.forEach((element)=>{
         element.onclick = ()=>{
-
             //sử dụng hàm splice để xóa bắt đầu tại 1 vị trí và số phần tử muốn xóa
             listToDo = listToDo.splice(parseInt(element.classList[1]),1);
             console.log(listToDo);
