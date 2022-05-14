@@ -32,7 +32,7 @@ console.log(`connceted!`);
 // console.log(test);
 
 
-// let arrString = ["Ronaldo", "Messi", "Nhật Bản", "USA", "Việt Nam", "In-Đô", "India"];
+// let arrString = ["", "Messi", "Nhật Bản", "USA", "Việt Nam", "In-Đô", "India"];
 
 // yc1:
 // + thêm 2 tên nước là: ThaiLand, Capmuchia vào vị trí nước In-Đô
@@ -68,6 +68,7 @@ let arrObject = [
     { name: "manh", age: 6, height: 150 },
     { name: "Dam Vinh Biet", age: 2, height: 140 }
 ];
+
 // yc1: Tìm kiếm và hiển thị ra tên của người có chiều cao lớn hơn 145
 // yc2: Tìm và hiển thị người có độ tuổi chẵn
 // yc3: Sắp xếp và hiển thị lại mảng object trên theo chiều cao từ bé tới lớn
