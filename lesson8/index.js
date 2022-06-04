@@ -135,23 +135,45 @@ btnAddTask.onclick = (e) => {
     // kiểm tra task name đã tồn tại
     let counterItemFilter = findItem(arrTask, tempTask.taskName);
     // nếu đã tồn tại thì sex throw new Error
-    if (counterItemFilter.length != 0) throw new Error('Task name already existed!');
+    if (counterItemFilter.length != 0) {
+      for (let i = 0; i < counterItemFilter.length; i++) {
+        try {
+          if (counterItemFilter[i].taskStatus != 'Finished') throw new Error('Task name already existed!');
+          // nếu chưa tồn tại
+          // code ...
+          let tempArrTask = [...arrTask];
 
-    // nếu chưa tồn tại
-    // code ...
-    let tempArrTask = [...arrTask];
+          // day la logic them task
+          tempArrTask.push(tempTask);
 
-    // day la logic them task
-    tempArrTask.push(tempTask);
+          arrTask = tempArrTask;
 
-    arrTask = tempArrTask;
+          // đây là bước lưu trữ mảng task vào trong localStorage
+          localStorage.setItem('ListTask', JSON.stringify(arrTask));
 
-    // đây là bước lưu trữ mảng task vào trong localStorage
-    localStorage.setItem('ListTask', JSON.stringify(arrTask));
+          // day la ham hien thi bang task
+          renderTable(arrTask);
+        } catch (error) {
+          alert(error.message)
+        }
+      }
+    } else {
+      // nếu chưa tồn tại
+      // code ...
+      let tempArrTask = [...arrTask];
+
+      // day la logic them task
+      tempArrTask.push(tempTask);
+
+      arrTask = tempArrTask;
+
+      // đây là bước lưu trữ mảng task vào trong localStorage
+      localStorage.setItem('ListTask', JSON.stringify(arrTask));
 
 
-    // day la ham hien thi bang task
-    renderTable(arrTask);
+      // day la ham hien thi bang task
+      renderTable(arrTask);
+    }
   } catch (error) {
     alert(error.message);
   }
